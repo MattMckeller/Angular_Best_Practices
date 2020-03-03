@@ -1,0 +1,43 @@
+<div class="component-container">
+    <div [style.flexBasis]="'48%'" class="left">
+        <app-form-label
+                [text]="question?.text"
+                [required]="question?.required"
+        ></app-form-label>
+    </div>
+    <div [style.flexBasis]="'48%'" class="right" [formGroup]="group">
+
+        <!--Autocomplete Input-->
+        <app-autocomplete-input
+                *ngIf="autocomplete === true; else standardInputs"
+                [control]="control"
+                [question]="question"
+                [filter]="autocompleteFilter"
+                [errorStateMatcher]="errorStateMatcher"
+                [shouldDisplayError]="shouldDisplayError"
+        ></app-autocomplete-input>
+
+        <!--Other input options-->
+        <ng-template #standardInputs>
+            <ng-container [ngSwitch]="question.type">
+                <app-select-input
+                        *ngSwitchCase="'select'"
+                        [errorStateMatcher]="errorStateMatcher"
+                        [shouldDisplayError]="shouldDisplayError"
+                        [control]="control"
+                        [group]="group"
+                        [question]="question"
+                ></app-select-input>
+
+                <app-text-input
+                        *ngSwitchDefault
+                        [errorStateMatcher]="errorStateMatcher"
+                        [shouldDisplayError]="shouldDisplayError"
+                        [control]="control"
+                        [group]="group"
+                        [question]="question"
+                ></app-text-input>
+            </ng-container>
+        </ng-template>
+    </div>
+</div>

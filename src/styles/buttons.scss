@@ -1,0 +1,26 @@
+@import "_variables.scss";
+
+button {
+  width: 85px;
+  height: 30px;
+
+  &.call-to-action {
+    background-color: $call-to-action-fill-1;
+    border-color: $call-to-action-border-1 !important;
+    color: white;
+  }
+
+  &.cancel {
+    background-color: transparent;
+    color: black;
+  }
+
+  &.rounded {
+    border-radius: 25px;
+    outline: none;
+  }
+
+  &.no-border {
+    border: 0;
+  }
+}

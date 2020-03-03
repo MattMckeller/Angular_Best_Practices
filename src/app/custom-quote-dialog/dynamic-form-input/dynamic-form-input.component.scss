@@ -1,0 +1,13 @@
+
+.component-container {
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .left, .right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

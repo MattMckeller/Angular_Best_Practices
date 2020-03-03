@@ -1,0 +1,18 @@
+<!--Autocomplete Input-->
+<mat-form-field appearance="fill">
+    <input matInput
+           [name]="question.id"
+           [formControl]="control"
+           [matAutocomplete]="auto"
+           [errorStateMatcher]="errorStateMatcher"
+           [value]="selectedAutocompleteOption?.text || control.value"
+    />
+    <mat-error>
+        <mat-icon *ngIf="shouldDisplayError">error</mat-icon>
+    </mat-error>
+</mat-form-field>
+<mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of $filteredOptions | async" [value]="option.id">
+        {{ option.text }}
+    </mat-option>
+</mat-autocomplete>

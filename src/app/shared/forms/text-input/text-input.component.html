@@ -1,0 +1,10 @@
+<mat-form-field appearance="fill">
+    <input matInput
+           [name]="question.id"
+           [formControl]="control"
+           [errorStateMatcher]="errorStateMatcher"
+    />
+    <mat-error>
+        <mat-icon *ngIf="shouldDisplayError">error</mat-icon>
+    </mat-error>
+</mat-form-field>

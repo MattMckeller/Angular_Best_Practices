@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+$foreground: $mat-light-theme-foreground;
+$background: map_merge(
+                $mat-light-theme-background, (
+                card: white,
+                dialog: white
+        )
+);
+
+
+// Define a custom theme since dialog is dark with the included mat theme.
+$my-theme-primary: mat-palette($mat-grey); // random
+$my-theme-accent: mat-palette($mat-grey); // random
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent);
+$my-theme: map_merge(
+                $my-theme, (
+                foreground: $foreground,
+                background: $background
+        )
+);
+
+// Define which parts of the overall theme should use these settings
+@include mat-dialog-theme($my-theme);
+@include mat-option-theme($my-theme);
+@include mat-select-theme($my-theme);
+@include mat-autocomplete-theme($my-theme);
+@include mat-form-field-outline-theme($my-theme);

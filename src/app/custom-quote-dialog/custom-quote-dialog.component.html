@@ -1,0 +1,25 @@
+<div class="dialog-header">
+    <h1>Your custom quote starts here.</h1>
+    <p class="subheading-1">This is going to be amazing.</p>
+</div>
+<div class="dialog-body">
+    <form>
+        <app-dynamic-form-input *ngFor="let question of questions"
+                                [question]="question"
+                                [control]="getFormControl(question)"
+                                [group]="customQuoteForm"
+                                [autocomplete]="shouldUseAutocomplete(question)"
+                                [autocompleteFilter]="autocompleteFilter"
+                                [ngClass]="shouldUseAutocomplete(question) ? 'autocomplete' : ''"
+        ></app-dynamic-form-input>
+    </form>
+</div>
+<div class="dialog-footer">
+    <button mat-button class="cancel rounded no-border" (click)="onCancel()">Cancel</button>
+    <button mat-stroked-button
+            class="call-to-action rounded"
+            [disabled]="customQuoteForm.invalid"
+            (click)="onSubmit()">
+        Submit
+    </button>
+</div>

@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src/",
+    "paths": {
+      "@app": ["app"],
+      "@app/*": ["app/*"],
+      "@env": ["environments"],
+      "@env/*": ["environments/*"],
+      "@core": ["app/core"],
+      "@core/*:": ["app/core/*"],
+      "@shared": ["app/shared"],
+      "@shared/*": ["app/shared/*"],
+      "@models": ["app/core/models"],
+      "@models/*": ["app/core/models/*"],
+      "@services": ["app/core/services"],
+      "@services/*": ["app/core/services/*"],
+      "@enums": ["app/core/enums"],
+      "@enums/*": ["app/core/enums/*"],
+      "@testing": ["app/testing"],
+      "@testing/*": ["app/testing/*"],
+      "@stubs": ["app/testing/stubs"],
+      "@stubs/*": ["app/testing/stubs/*"],
+      "@testData": ["app/testing/data"],
+      "@testData/*": ["app/testing/data/*"]
+    },
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  }
+}
