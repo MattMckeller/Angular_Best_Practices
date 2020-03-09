@@ -1,5 +1,5 @@
 # Clean Angular Example
-This was originally an assessment given to me that I took a lot of time on. This repository demonstrates a scalable angular application setup with all around clean code written with best practices in mind. 
+This was originally an assessment given to me that I took my time with. This repository demonstrates a scalable angular application setup with all around clean code written with best practices in mind. 
 
 ## The App
 A form is generated dynamically based of data. The data comes from an api call that will return a list of input fields to display. These input fields data contains the field type(text, select, async autocomplete), name, and label. The response data also contains each field's validation requirements, and other relevant data (i.e. select options).
